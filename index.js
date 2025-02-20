@@ -29,3 +29,15 @@ function compareArray(a,b) {
     return combinedArray
 
 }
+
+
+//Day 4. I worked on a problem that creates a function that returns the sum of all integers in an array
+//I used the for loop to loop through the array (any given array) while adding each value to a variable with initial state of 0
+
+function aVeryBigSum(ar) {
+    let arrSum = 0
+    for (let i = 0; i < ar.length; i++){
+        arrSum += ar[i]
+    }
+    return arrSum
+}
