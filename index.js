@@ -41,3 +41,14 @@ function aVeryBigSum(ar) {
     }
     return arrSum
 }
+
+
+//Day 5. working with square matrix. calculate the difference between the sums of its diagonal.
+
+function diagonaDiffernce(arr) {
+    let sumOfLeftToRight = arr[0][0] + arr[1][1] + arr[2][2];
+    let sumOfRightToLeft = arr[0][2] + arr[1][1] + arr[2][0];
+    let difference = sumOfLeftToRight - sumOfRightToLeft
+    return Math.abs(difference)
+    
+}
