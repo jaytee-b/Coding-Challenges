@@ -52,3 +52,5 @@ function diagonaDiffernce(arr) {
     return Math.abs(difference)
     
 }
+
+//this challenge was focused on arrays in arrays.
