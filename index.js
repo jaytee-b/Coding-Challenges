@@ -67,3 +67,17 @@ function universalDiagonalDifference(arr) {
 
 //This function is a univeral one that works with any size of matrix.
 //I used a for loop to loop through each array while adding the sum to the iteratted value of "sumOfLtR" and "sumOfRtL"
+
+
+//Day 6 - Grading students. This challenge was to create a function that maps through an array of students scores and returns their new scores if some conditions are met
+
+function gradingStudents(grades) {
+  return grades.map(grade => {
+    if (grade >= 38){
+      let multipleOfFive = Math.ceil(grade /5) * 5
+      return (multipleOfFive - grade < 3) ? multipleOfFive : grade
+    }else{
+      return grade
+    }
+  })
+}
