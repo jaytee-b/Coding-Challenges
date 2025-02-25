@@ -81,3 +81,16 @@ function gradingStudents(grades) {
     }
   })
 }
+
+//Day 7. Staircase detail. a function that prints a staircase with the same base and height. the staircase is made up of "#" and " "
+function staircase(n){
+  let result = ""
+  for (let i = 1; i <= n; i++){
+     let space = " ".repeat(n-i)
+     let hash = "#".repeat(i)
+
+     result = space + hash 
+     console.log(result)
+  }
+  
+}
