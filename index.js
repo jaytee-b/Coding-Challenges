@@ -94,3 +94,20 @@ function staircase(n){
   }
   
 }
+
+
+//Day 8. finding the maximum number(s) in an array and returning their length
+//(birthday cake question)
+function birthdayCakeCandles(candles){
+  let max = candles[0]  //assume that this is the max number in the array
+  let maxInstances = [max]
+
+  for (let i = 1; i < candles.length; i++) {
+    if (candles[i] > max){
+      max = candles[i]
+    }else if(candles[i] === max){
+      maxInstances.push(max)
+    }
+  }
+  return maxInstances.length
+}
