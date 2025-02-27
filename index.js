@@ -61,53 +61,91 @@ function universalDiagonalDifference(arr) {
     sumOfRtL += arr[i][n - 1 - i];
   }
   const difference2 = sumOfLtR - sumOfRtL;
-  return Math.abs(difference2)
+  return Math.abs(difference2);
 }
-
 
 //This function is a univeral one that works with any size of matrix.
 //I used a for loop to loop through each array while adding the sum to the iteratted value of "sumOfLtR" and "sumOfRtL"
 
-
 //Day 6 - Grading students. This challenge was to create a function that maps through an array of students scores and returns their new scores if some conditions are met
 
 function gradingStudents(grades) {
-  return grades.map(grade => {
-    if (grade >= 38){
-      let multipleOfFive = Math.ceil(grade /5) * 5
-      return (multipleOfFive - grade < 3) ? multipleOfFive : grade
-    }else{
-      return grade
+  return grades.map((grade) => {
+    if (grade >= 38) {
+      let multipleOfFive = Math.ceil(grade / 5) * 5;
+      return multipleOfFive - grade < 3 ? multipleOfFive : grade;
+    } else {
+      return grade;
     }
-  })
+  });
 }
 
 //Day 7. Staircase detail. a function that prints a staircase with the same base and height. the staircase is made up of "#" and " "
-function staircase(n){
-  let result = ""
-  for (let i = 1; i <= n; i++){
-     let space = " ".repeat(n-i)
-     let hash = "#".repeat(i)
+function staircase(n) {
+  let result = "";
+  for (let i = 1; i <= n; i++) {
+    let space = " ".repeat(n - i);
+    let hash = "#".repeat(i);
 
-     result = space + hash 
-     console.log(result)
+    result = space + hash;
+    console.log(result);
   }
-  
 }
-
 
 //Day 8. finding the maximum number(s) in an array and returning their length
 //(birthday cake question)
-function birthdayCakeCandles(candles){
-  let max = candles[0]  //assume that this is the max number in the array
-  let maxInstances = [max]
+function birthdayCakeCandles(candles) {
+  let max = candles[0]; //assume that this is the max number in the array
+  let maxInstances = [max];
 
   for (let i = 1; i < candles.length; i++) {
-    if (candles[i] > max){
-      max = candles[i]
-    }else if(candles[i] === max){
-      maxInstances.push(max)
+    if (candles[i] > max) {
+      max = candles[i];
+    } else if (candles[i] === max) {
+      maxInstances.push(max);
     }
   }
-  return maxInstances.length
+  return maxInstances.length;
+}
+
+//day 9. min. max value. finding the min values in an array and the max values
+
+function breakingRecords(scores) {
+  let maxRecord = scores[0];
+  let minRecord = scores[0];
+  let maxArray = [];
+  let minArray = [];
+
+  for (let i = 1; i < scores.length; i++) {
+    if (maxRecord < scores[i]) {
+      maxRecord = scores[i];
+      maxArray.push(maxRecord);
+    } else if (minRecord > scores[i]) {
+      if (minRecord === scores[i]) {
+      } else {
+        minRecord = scores[i];
+      }
+      minArray.push(minRecord);
+    }
+  }
+  return [maxArray.length, minArray.length];
+}
+///my methdod works but i found a simplified one on perplexity where u count the instances directly instead of using the .length
+
+function breakingRecords(scores) {
+  let maxRecord = scores[0];
+  let minRecord = scores[0];
+  let maxBreaks = 0;
+  let minBreaks = 0;
+
+  for (let i = 1; i < scores.length; i++) {
+    if (scores[i] > maxRecord) {
+      maxRecord = scores[i];
+      maxBreaks++;
+    } else if (scores[i] < minRecord) {
+      minRecord = scores[i];
+      minBreaks++;
+    }
+  }
+  return [maxBreaks, minBreaks];
 }
