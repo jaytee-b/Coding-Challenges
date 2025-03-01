@@ -149,3 +149,26 @@ function breakingRecords(scores) {
   }
   return [maxBreaks, minBreaks];
 }
+
+//Day 10. COMPLETE A FUNCTION THAT COUNTS THE AMOUNT OF ORANGLES AND APPLES THAT FALL ON A HOUSE THATS IN THE MIDDLE OF TWO TREES
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  let appleOnHouse = 0;
+  let orangeOnHouse = 0
+  for (let i =0; i < apples.length; i ++){
+    let appleDistance = apples[i] + a
+    if(appleDistance >= s && appleDistance <=t){
+      appleOnHouse++;
+    }
+  }
+
+  for (let i=0; i<oranges.length; i++){
+    let orangeDistance = oranges[i] + b
+    if(orangeDistance >= s && orangeDistance <= t){
+      orangeOnHouse++
+    }
+  }
+
+  console.log(appleOnHouse);
+  console.log(orangeOnHouse);
+}
