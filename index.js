@@ -172,3 +172,25 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
   console.log(appleOnHouse);
   console.log(orangeOnHouse);
 }
+
+
+//Day 11. Kangaroo question- solve a problem involving two kangaroos jumping towards each other. The goal is to determine if they will ever meet at the same position. 
+
+
+function kangaroo(x1, v1, x2,v2){
+  let KangarooOne = [x1];
+  let kangarooTwo = [x2];
+
+  for (let i = 0; i < 10000; i++){
+    let newMember = KangarooOne[0] + (v1 * (i+1))
+    KangarooOne.push(newMember)
+
+    let newMemberTwo = kangarooTwo[0] + (v2*(i+1))
+    kangarooTwo.push(newMemberTwo)
+
+    if(KangarooOne[KangarooOne.length-1]=== kangarooTwo[kangarooTwo.length-1]){
+      return("YES")
+    }
+  }
+  return("NO")
+}
