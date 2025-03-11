@@ -243,3 +243,23 @@ function birthday(s,d,m){
   return count
 
 }
+
+//DAY 13- . min. max value. finding the min values in an array and the max values
+function breakingRecords(scores){
+  let minScore = 0
+  let maxScore = 0
+  let minCount = 0
+  let maxCount = 0
+
+  for (let i =1; i < scores.length; i ++){
+    if(scores[i] > maxScore){
+      maxScore = scores[i];
+      maxCount++
+    }else if (scores[i] < minScore){
+      minScore = scores[i]
+      minCount++
+    }
+  }
+  return[maxCount,minCount]
+
+}
